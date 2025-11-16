@@ -15,7 +15,7 @@ export default async function handler(req, res) {
       headers: {
         "Content-Type": "application/json",
         "Authorization": `Bearer ${process.env.SLACK_BOT_TOKEN}`
-      },
+      }
       body: JSON.stringify({
         channel: slack_user_id,
         text: message
@@ -30,3 +30,4 @@ export default async function handler(req, res) {
     return res.status(500).json({ error: "Failed to send Slack message" });
   }
 }
+
